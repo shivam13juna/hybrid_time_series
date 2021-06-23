@@ -11,7 +11,7 @@ NUM_CELLS = 12
 
 
 def create_conditions():
-    conditions = np.zeros(shape=[NUM_SAMPLES, NUM_CLASSES]) 
+    conditions = np.zeros(shape=[NUM_SAMPLES, NUM_CLASSES])
     for i, kk in enumerate(conditions):
         kk[i % NUM_CLASSES] = 1
     return conditions
@@ -49,17 +49,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-# Acha, so supposedly I've a time-series dataset, and some non-sequential data. For example
-# in weather forecasting i've data of temperature which are sequential data, but then I also have 
-# non-sequential data, for example City. and I've to make a model for predicting weather, 
-# you think it make sense to append non-sequential data with sequential ones and pass it through LSTM
-
-
-# Problem in above case would be that I'd be polluting sequentail data with non-sequential ones. 
-
-
-# Other approach is that I pass non-sequential data through some dense layer then append it with 
-# lstm output and then pass the appended data through some dense layers. You think this approach would 
-# be better? 
